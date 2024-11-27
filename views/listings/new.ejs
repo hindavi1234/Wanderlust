@@ -1,0 +1,155 @@
+<%- layout("/layouts/boilerplate") %>
+<div class="row mt-5">
+    <div class="col-8 offset-2">
+        <h3><b>Create a New Property</b></h3>
+
+        <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+            <!-- Title Field -->
+            <div class="mb-3">
+                <label for="title" class="form-label"><b>Title</b></label>
+                <input name="listing[title]" placeholder="Add a catchy title" type="text" class="form-control"
+                    required />
+                <div class="valid-feedback">Title looks good!</div>
+            </div>
+
+            <!-- Description Field -->
+            <div class="mb-3">
+                <label for="description" class="form-label"><b>Description</b></label>
+                <textarea name="listing[description]" class="form-control"></textarea>
+                <div class="invalid-feedback">Please enter a short description</div>
+            </div>
+
+            <!-- Image Upload Field -->
+            <div class="mb-3">
+                <label for="image" class="form-label"><b>Upload Property Image</b></label>
+                <input name="listing[image]" type="file" class="form-control" required />
+            </div>
+
+            <div class="row">
+                <!-- Price Field -->
+                <div class="mb-3 col-md-4">
+                    <label for="price" class="form-label"><b>Price</b></label>
+                    <input name="listing[price]" placeholder="1200" class="form-control" required />
+                    <div class="invalid-feedback">Price should be valid</div>
+                </div>
+
+                <!-- Country Field -->
+                <div class="mb-3 col-md-8">
+                    <label for="country" class="form-label"><b>Country</b></label>
+                    <input name="listing[country]" placeholder="India" type="text" class="form-control" required />
+                    <div class="invalid-feedback">Country name should be valid</div>
+                </div>
+            </div>
+
+            <!-- Location Field -->
+            <div class="mb-3">
+                <label for="location" class="form-label"><b>Location</b></label>
+                <input name="listing[location]" placeholder="Uttarakhand" type="text" class="form-control"
+                    required />
+                <div class="invalid-feedback">Location should be valid</div>
+            </div>
+
+            <!-- Category Field -->
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select name="listing[category]" class="form-control" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="trending">Trending</option>
+                    <option value="rooms">Rooms</option>
+                    <option value="iconic cities">Iconic Cities</option>
+                    <option value="mountain">Mountain</option>
+                    <option value="amazing pools">Amazing Pools</option>
+                    <option value="camping">Camping</option>
+                    <option value="farms">Farms</option>
+                    <option value="arctic">Arctic</option>
+                    <option value="domes">Domes</option>
+                    <option value="boats">Boats</option>
+                </select>
+                <div class="invalid-feedback">Please select a category</div>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn btn-dark add-btn mt-3 mb-4 w-100" type="submit">Add</button>
+        </form>
+    </div>
+</div>
+
+<!-- Interactive Styling -->
+<style>
+    .form-control, .form-select {
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-control:focus, .form-select:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+    }
+
+    .btn-dark {
+        background-color: #343a40;
+        border: none;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 10px;
+        width: 100%;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-dark:hover {
+        background-color: #23272b;
+        cursor: pointer;
+    }
+
+    /* Feedback Messages */
+    .valid-feedback {
+        color: #28a745;
+        font-size: 0.9rem;
+    }
+
+    .invalid-feedback {
+        color: #e74c3c;
+        font-size: 0.9rem;
+    }
+
+    .needs-validation .form-control:invalid {
+        border-color: #262f42;
+    }
+
+    /* Image input field interaction */
+    input[type="file"] {
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        background-color: #f8f8f8;
+        cursor: pointer;
+    }
+
+    input[type="file"]:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* Responsive Form Layout */
+    @media (max-width: 576px) {
+        .col-md-4, .col-md-8 {
+            padding: 0;
+        }
+
+        .row {
+            flex-direction: column;
+        }
+
+        .form-control, .form-select, .btn-dark {
+            font-size: 1rem;
+        }
+
+        .btn-dark {
+            padding: 12px;
+        }
+    }
+</style>

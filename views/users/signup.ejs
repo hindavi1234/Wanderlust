@@ -1,0 +1,113 @@
+<%- layout("/layouts/boilerplate") %>
+
+<!-- SignUp Page Container -->
+<div class="signup-container row mt-5">
+    <h1 class="col-12 text-center mb-4">SignUp on Wanderlust</h1>
+    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
+        <form action="/signup" method="POST" class="needs-validation signup-form" novalidate>
+            <!-- Username Field -->
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" name="username" class="form-control" required />
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required />
+            </div>
+
+            <!-- Password Field -->
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required />
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn btn-signup w-100" type="submit">SignUp</button>
+        </form>
+    </div>
+</div>
+
+<!-- Additional Custom Styles -->
+<style>
+    .signup-container {
+        max-width: 500px; /* Maximum width for the signup form */
+        margin: 0 auto; /* Center the container */
+        padding: 30px 20px;
+        background: #f7f7f7;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .signup-form {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .form-label {
+        font-size: 1rem;
+        color: #555;
+        font-weight: 500;
+    }
+
+    .form-control {
+        border-radius: 6px;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        background-color: #f8f8f8;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #3498db;
+        background-color: #fff;
+    }
+
+    .btn-signup {
+        background-color: #3498db; /* Green background for the signup button */
+        border: none;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 12px 0;
+        color: #fff;
+        border-radius: 6px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-signup:hover {
+        background-color: #2980b9; /* Darker green on hover */
+        cursor: pointer;
+    }
+
+    /* Optional: Style valid feedback text */
+    .valid-feedback {
+        font-size: 0.9rem;
+        color: #2980b9;
+    }
+
+    /* Media query for responsiveness */
+    @media (max-width: 576px) {
+        .signup-container {
+            padding: 20px 15px;
+        }
+
+        .signup-form {
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+</style>
